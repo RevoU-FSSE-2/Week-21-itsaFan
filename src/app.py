@@ -4,6 +4,7 @@ from flask import Flask
 from extensions import db, bcrypt
 from config import Config
 from routes.auth import auth_bp
+from utils.generate_roles import initialize_roles
 
 # config
 app = Flask(__name__)
@@ -14,6 +15,9 @@ bcrypt.init_app(app)
 
 # Create tables
 with app.app_context():
+    # db.drop_all()
     db.create_all()
+    initialize_roles()
+
 
 app.register_blueprint(auth_bp, url_prefix='/api')

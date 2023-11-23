@@ -1,4 +1,5 @@
 from models.user import db, User
+from models.permission import Permission
 from extensions import bcrypt
 from sqlalchemy.exc import IntegrityError
 import jwt
@@ -13,7 +14,8 @@ def register_user(username, password, bio):
         return {"error": "Username already exists"}
 
     pw_hash = bcrypt.generate_password_hash(password).decode('utf-8')
-    new_user = User(username=username, password=pw_hash, bio=bio)
+    default_role = Permission.query.filter_by(name='ROLE_USER').first()
+    new_user = User(username=username, password=pw_hash, bio=bio, permission=default_role)
 
     try:
         db.session.add(new_user)
@@ -32,7 +34,8 @@ def login_user(username, password):
             'iat': datetime.datetime.utcnow(),
             'userId': user.id,
             'username': user.username,
-            'bio': user.bio
+            'bio': user.bio,
+            'role': user.permission.name
         }
         token = jwt.encode(payload, current_app.config.get('SECRET_KEY'), algorithm='HS256')
         return token
