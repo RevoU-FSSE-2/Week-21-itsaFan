@@ -4,6 +4,7 @@ from flask import Flask
 from extensions import db, bcrypt
 from config import Config
 from routes.auth import auth_bp
+from routes.tweet import tweet_bp
 from utils.generate_roles import initialize_roles
 
 # config
@@ -21,3 +22,4 @@ with app.app_context():
 
 
 app.register_blueprint(auth_bp, url_prefix='/api')
+app.register_blueprint(tweet_bp, url_prefix='/api')
