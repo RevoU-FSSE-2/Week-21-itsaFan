@@ -21,7 +21,7 @@ def login():
     token = login_user(data['username'], data['password'])
 
     if token:
-        response = make_response(jsonify({"message": "Login successful"}), 200)
+        response = make_response(jsonify({"message": "Login Success!"}), 200)
         response.set_cookie('token', token, max_age=8*60*60)
         return response
     else:
