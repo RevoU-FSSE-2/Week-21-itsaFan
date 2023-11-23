@@ -3,9 +3,13 @@ load_dotenv()
 from flask import Flask
 from extensions import db, bcrypt
 from config import Config
-from routes.auth import auth_bp
-from routes.tweet import tweet_bp
 from utils.generate_roles import initialize_roles
+
+# Routes Import
+from routes.authRoutes import auth_bp
+from routes.tweetRoutes import tweet_bp
+from routes.followRoutes import follow_bp
+
 
 # config
 app = Flask(__name__)
@@ -20,6 +24,7 @@ with app.app_context():
     db.create_all()
     initialize_roles()
 
-
+# Routes
 app.register_blueprint(auth_bp, url_prefix='/api')
 app.register_blueprint(tweet_bp, url_prefix='/api')
+app.register_blueprint(follow_bp, url_prefix='/api')
