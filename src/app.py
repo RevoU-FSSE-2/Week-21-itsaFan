@@ -9,6 +9,7 @@ from utils.generate_roles import initialize_roles
 from routes.authRoutes import auth_bp
 from routes.tweetRoutes import tweet_bp
 from routes.followRoutes import follow_bp
+from routes.userRoutes import user_bp
 
 
 # config
@@ -28,3 +29,4 @@ with app.app_context():
 app.register_blueprint(auth_bp, url_prefix='/api')
 app.register_blueprint(tweet_bp, url_prefix='/api')
 app.register_blueprint(follow_bp, url_prefix='/api')
+app.register_blueprint(user_bp, url_prefix='/api')
