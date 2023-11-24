@@ -34,6 +34,10 @@ The purpose of this assignment is to build a simplified version of a Twitter API
     - It will prevent the user from following themselves.
     - It will prevent the user from following the same person twice.
     - It will have validation if the user trying to unfollow the person that they're not following.
+  - View Own Profile Functionality
+    - When user is loggedin, they will have access to this endpoint `(authentication)`.
+    - User can see or retrieved their profile when logged-in.
+    - The profile information includes `username`, `bio`, `followers`, `following`m and `10 most recent tweets`
 
 #### Guide to use this app
 
