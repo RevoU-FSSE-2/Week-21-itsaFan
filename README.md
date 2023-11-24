@@ -54,6 +54,16 @@ The purpose of this assignment is to build a simplified version of a Twitter API
 | /api/user/me    | View profile        | GET   |-                      |
 
 
+#### Screenshots
+![Alt text](readme_ss/image-8.png)
+![Alt text](readme_ss/image.png)
+![Alt text](readme_ss/image-1.png)
+![Alt text](readme_ss/image-2.png)
+![Alt text](readme_ss/image-3.png)
+![Alt text](readme_ss/image-4.png)
+![Alt text](readme_ss/image-5.png)
+![Alt text](readme_ss/image-7.png)
+![Alt text](readme_ss/image-6.png)
 
 
 
