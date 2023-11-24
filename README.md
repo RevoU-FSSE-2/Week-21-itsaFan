@@ -26,9 +26,10 @@ The purpose of this assignment is to build a simplified version of a Twitter API
     - Each login attempt will generate a `JWT-Token` which will be stored on the user client cookies.
     - Validation for invalid username or password.
   - Posting Tweet Functionality:
-    - When user is loggedin, they will have access to this endpoint (authentication).
+    - When user is loggedin, they will have access to this endpoint `(authentication)`.
     - The tweets will have maximum of 150 characters.
   - Follow Functionality
+    - When user is loggedin, they will have access to this endpoint `(authentication)`.
     - This function will enable users to follow or unfollow another users.
     - It will prevent the user from following themselves.
     - It will prevent the user from following the same person twice.
